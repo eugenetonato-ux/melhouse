@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Comment Commander — LE MEL HOUSE | Commande via WhatsApp</title>
+  <meta name="description" content="Découvrez comment commander vos articles LE MEL HOUSE en étapes simples via WhatsApp. Rapide, confidentiel, sûr et sans complications." />
+  <link rel="icon" type="image/png" href="assets/img/logo.png" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .steps-section { padding-block: var(--space-2xl); }
+    .steps-wrapper { max-width: 720px; margin-inline: auto; }
+    .faq-grid { display:grid; gap:var(--space-md); max-width:800px; margin-inline:auto; }
+    .faq-item {
+      background: var(--color-gray-50);
+      border: 1px solid var(--color-gray-200);
+      border-radius: var(--radius-md);
+      padding: var(--space-md);
+      transition: var(--transition);
+    }
+    .faq-item:hover {
+      border-color: var(--color-primary);
+      box-shadow: var(--shadow-sm);
+    }
+    .faq-item h4 { font-family: var(--font-body); font-size:1rem; font-weight:600; margin-bottom:0.5rem; color:var(--color-text); }
+    .faq-item p  { font-size:0.9rem; color:var(--color-text-muted); }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header" id="header">
+  <div class="container header__inner">
+    <a href="index.html" class="header__logo">
+      <img src="assets/img/logo.png" alt="LE MEL HOUSE Logo" class="header__logo-img" />
+      <div class="header__logo-text">LE MEL HOUSE<span>Fashion Boutique</span></div>
+    </a>
+    <nav class="header__nav">
+      <a href="index.html">Accueil</a>
+      <a href="categories.html">Catégories</a>
+      <a href="boutique.html">Boutique</a>
+      <a href="galerie.html">Galerie</a>
+      <a href="comment-commander.html" class="active">Commander</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header__actions">
+      <a href="#" class="btn btn-whatsapp btn-sm" data-whatsapp=""><i class="fab fa-whatsapp"></i> Commander</a>
+    </div>
+    <button class="header__hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<nav class="mobile-nav" id="mobile-nav">
+  <button class="mobile-nav__close" id="mobile-nav-close"><i class="fas fa-times"></i></button>
+  <a href="index.html">Accueil</a>
+  <a href="categories.html">Catégories</a>
+  <a href="boutique.html">Boutique</a>
+  <a href="galerie.html">Galerie</a>
+  <a href="comment-commander.html">Commander</a>
+  <a href="contact.html">Contact</a>
+  <div class="mobile-nav__cta">
+    <a href="#" class="btn btn-whatsapp" data-whatsapp=""><i class="fab fa-whatsapp"></i> Commander</a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb">
+      <a href="index.html">Accueil</a>
+      <i class="fas fa-chevron-right"></i>
+      <span>Comment Commander</span>
+    </nav>
+    <h1>Commander en Toute Simplicité</h1>
+    <p>Une expérience fluide et personnalisée. Aucun compte à créer, aucun formulaire interminable — un contact direct avec votre conseiller.</p>
+  </div>
+</section>
+
+<!-- ÉTAPES -->
+<section class="steps-section">
+  <div class="container">
+    <div class="steps-wrapper">
+      <div class="steps-list">
+
+        <div class="step-item reveal">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h3>Explorez notre collection</h3>
+            <p>Parcourez notre catalogue dans la <a href="boutique.html" style="color:var(--color-primary);font-weight:600;">Boutique</a> ou découvrez nos univers dans les <a href="categories.html" style="color:var(--color-primary);font-weight:600;">Catégories</a>. Filtrez par collection pour trouver la pièce qui vous correspond.</p>
+          </div>
+        </div>
+
+        <div class="step-item reveal">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h3>Sélectionnez votre article</h3>
+            <p>Accédez à la présentation détaillée pour observer les finitions, les matières nobles, les coloris disponibles et les conseils de taille. Choisissez le modèle qui sublimera votre style.</p>
+          </div>
+        </div>
+
+        <div class="step-item reveal">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h3>Échangez sur WhatsApp en un clic</h3>
+            <p>Cliquez simplement sur le bouton <strong style="color:var(--color-primary)">« Commander sur WhatsApp »</strong>. L'application s'ouvre automatiquement avec un message personnalisé déjà prêt à l'envoi mentionnant l'article de votre choix.</p>
+            <a href="#" class="btn btn-whatsapp btn-sm mt-sm" data-whatsapp="">
+              <i class="fab fa-whatsapp"></i> Démarrer une conversation
+            </a>
+          </div>
+        </div>
+
+        <div class="step-item reveal">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <h3>Conseil sur mesure &amp; confirmation</h3>
+            <p>Notre équipe vous répond avec diligence pour confirmer la disponibilité immédiate de votre taille, vous orienter si nécessaire et convenir des détails de livraison ou de retrait selon votre convenance.</p>
+          </div>
+        </div>
+
+        <div class="step-item reveal">
+          <div class="step-num">5</div>
+          <div class="step-content">
+            <h3>Réception soignée &amp; règlement</h3>
+            <p>Votre commande est préparée avec le plus grand soin. Le règlement s'effectue simplement selon les modalités convenues (Mobile Money ou espèces à la livraison / au retrait à Cotonou).</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section--soft" id="faq">
+  <div class="container">
+    <div class="section-header">
+      <div class="fil-dor">
+        <div class="fil-dor__line"></div>
+        <div class="fil-dor__dot"></div>
+        <div class="fil-dor__line"></div>
+      </div>
+      <span class="eyebrow">Questions fréquentes</span>
+      <h2>Tout ce que vous devez savoir</h2>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item reveal">
+        <h4><i class="fas fa-question-circle" style="color:var(--color-primary);margin-right:.5rem;"></i>Comment obtenir des informations ou commander un article ?</h4>
+        <p>Cliquez directement sur le bouton WhatsApp sous l'article souhaité. Notre service client VIP vous répond immédiatement pour vous communiquer toutes les informations, photos complémentaires et finaliser votre commande en direct.</p>
+      </div>
+      <div class="faq-item reveal">
+        <h4><i class="fas fa-question-circle" style="color:var(--color-primary);margin-right:.5rem;"></i>Proposez-vous la livraison à domicile ?</h4>
+        <p>Oui, nous assurons des livraisons rapides et sécurisées à Cotonou, Calavi, Porto-Novo et dans toutes les grandes villes du Bénin selon les modalités convenues ensemble.</p>
+      </div>
+      <div class="faq-item reveal">
+        <h4><i class="fas fa-question-circle" style="color:var(--color-primary);margin-right:.5rem;"></i>Quels modes de règlement sont acceptés ?</h4>
+        <p>Nous facilitons votre commande : Mobile Money (MTN Mobile Money, Moov Money) ainsi que le règlement en espèces au moment de la livraison ou lors du retrait sur place.</p>
+      </div>
+      <div class="faq-item reveal">
+        <h4><i class="fas fa-question-circle" style="color:var(--color-primary);margin-right:.5rem;"></i>Puis-je commander plusieurs pièces en même temps ?</h4>
+        <p>Tout à fait. Indiquez simplement à votre conseiller WhatsApp l'ensemble des articles que vous souhaitez pour bénéficier d'une préparation groupée et d'une livraison unique.</p>
+      </div>
+      <div class="faq-item reveal">
+        <h4><i class="fas fa-question-circle" style="color:var(--color-primary);margin-right:.5rem;"></i>Les articles présentés sont-ils en stock ?</h4>
+        <p>La majorité de nos pièces est immédiatement disponible. Pour les créations spéciales ou maillots floqués sur mesure, notre équipe vous précise le délai de confection au moment de l'échange.</p>
+      </div>
+      <div class="faq-item reveal">
+        <h4><i class="fas fa-clock" style="color:var(--color-primary);margin-right:.5rem;"></i>Quels sont vos horaires de disponibilité ?</h4>
+        <p>Notre service client et conciergerie WhatsApp est accessible <strong>24h/24 et 7j/7</strong>. Vous pouvez nous écrire à toute heure du jour et de la nuit pour passer commande ou poser vos questions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-banner">
+  <div class="container">
+    <h2>Prêt à passer votre commande ?</h2>
+    <p>Notre équipe est à votre écoute 24h/24 et 7j/7 sur WhatsApp. Cliquez ci-dessous pour débuter vos échanges dès maintenant.</p>
+    <a href="#" class="btn btn-ghost btn-lg" data-whatsapp="">
+      <i class="fab fa-whatsapp"></i> Démarrer une commande
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="header__logo">
+          <img src="assets/img/logo.png" alt="LE MEL HOUSE" class="header__logo-img" />
+          <div class="header__logo-text">LE MEL HOUSE<span>Fashion Boutique</span></div>
+        </a>
+        <p class="footer__desc">Votre boutique mode premium à Cotonou. Vêtements tendance, montres de prestige et accessoires d'exception livrés à votre porte.</p>
+        <div class="footer__socials">
+          <a href="#" class="footer__social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="footer__social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="footer__social-link" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          <a href="#" class="footer__social-link" data-whatsapp="" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div>
+        <p class="footer__col-title">Catégories</p>
+        <ul class="footer__links">
+          <li><a href="boutique.html?cat=vetements">Vêtements</a></li>
+          <li><a href="boutique.html?cat=chaussures">Chaussures</a></li>
+          <li><a href="boutique.html?cat=montres">Montres</a></li>
+          <li><a href="boutique.html?cat=accessoires">Accessoires</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__col-title">Navigation</p>
+        <ul class="footer__links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="categories.html">Catégories</a></li>
+          <li><a href="boutique.html">Boutique</a></li>
+          <li><a href="galerie.html">Galerie</a></li>
+          <li><a href="comment-commander.html">Commander</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__col-title">Commander</p>
+        <div class="footer__whatsapp-block">
+          <p>Commandez directement via WhatsApp avec réponse immédiate.</p>
+          <a href="#" class="btn btn-whatsapp" data-whatsapp=""><i class="fab fa-whatsapp"></i> +229 01 51 83 32 07</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2024 LE MEL HOUSE. Tous droits réservés.</span>
+      <span>Maison fondée avec passion pour l'élégance <i class="fas fa-heart" style="color:var(--color-primary)"></i></span>
+    </div>
+  </div>
+</footer>
+
+<a href="#" class="fab-whatsapp" data-whatsapp="" aria-label="Commander sur WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<script src="js/whatsapp.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

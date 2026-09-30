@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — LE MEL HOUSE | Service VIP WhatsApp</title>
+  <meta name="description" content="Contactez LE MEL HOUSE pour commander vos articles ou poser vos questions. Nous sommes disponibles sur WhatsApp au +229 01 51 83 32 07, 7 jours sur 7." />
+  <link rel="icon" type="image/png" href="assets/img/logo.png" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-md);
+      margin-top: var(--space-md);
+    }
+    @media(min-width:480px) { .social-grid { grid-template-columns: repeat(2, 1fr); } }
+    .social-card {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      padding: var(--space-md);
+      border-radius: var(--radius-md);
+      background: var(--color-gray-50);
+      border: 1px solid var(--color-gray-200);
+      transition: var(--transition);
+      text-decoration: none;
+      color: var(--color-text);
+    }
+    .social-card:hover {
+      border-color: var(--color-primary);
+      background: var(--color-primary-light);
+      transform: translateY(-2px);
+    }
+    .social-card__icon {
+      width: 44px; height: 44px;
+      border-radius: var(--radius-md);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+    .social-card__icon.whatsapp { background: #d5f5e3; color: #25D366; }
+    .social-card__icon.instagram { background: #fde3f1; color: #E1306C; }
+    .social-card__icon.facebook  { background: #dceeff; color: #1877F2; }
+    .social-card__icon.tiktok    { background: #e8e8e8; color: #000; }
+    .social-card__name { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing:.05em; color: var(--color-text-muted); }
+    .social-card__handle { font-size: 0.95rem; font-weight: 600; }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header" id="header">
+  <div class="container header__inner">
+    <a href="index.html" class="header__logo">
+      <img src="assets/img/logo.png" alt="LE MEL HOUSE Logo" class="header__logo-img" />
+      <div class="header__logo-text">LE MEL HOUSE<span>Fashion Boutique</span></div>
+    </a>
+    <nav class="header__nav">
+      <a href="index.html">Accueil</a>
+      <a href="categories.html">Catégories</a>
+      <a href="boutique.html">Boutique</a>
+      <a href="galerie.html">Galerie</a>
+      <a href="comment-commander.html">Commander</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+    <div class="header__actions">
+      <a href="#" class="btn btn-whatsapp btn-sm" data-whatsapp=""><i class="fab fa-whatsapp"></i> Commander</a>
+    </div>
+    <button class="header__hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<nav class="mobile-nav" id="mobile-nav">
+  <button class="mobile-nav__close" id="mobile-nav-close"><i class="fas fa-times"></i></button>
+  <a href="index.html">Accueil</a>
+  <a href="categories.html">Catégories</a>
+  <a href="boutique.html">Boutique</a>
+  <a href="galerie.html">Galerie</a>
+  <a href="comment-commander.html">Commander</a>
+  <a href="contact.html">Contact</a>
+  <div class="mobile-nav__cta">
+    <a href="#" class="btn btn-whatsapp" data-whatsapp=""><i class="fab fa-whatsapp"></i> Commander</a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb">
+      <a href="index.html">Accueil</a>
+      <i class="fas fa-chevron-right"></i>
+      <span>Contact</span>
+    </nav>
+    <h1>Contact &amp; Conciergerie</h1>
+    <p>Une question, une commande spécifique ? Notre service est disponible sur WhatsApp 7 jours sur 7.</p>
+  </div>
+</section>
+
+<!-- CONTACT PRINCIPAL -->
+<section class="section">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- Informations de contact -->
+      <div class="contact-info-block">
+
+        <div class="contact-info-item reveal-left">
+          <i class="fab fa-whatsapp"></i>
+          <div>
+            <h4>Service WhatsApp (Commandes &amp; Infos)</h4>
+            <a href="#" data-whatsapp="">+229 01 51 83 32 07</a>
+            <p style="font-size:.8rem;margin-top:.25rem;color:var(--color-text-muted);">Cliquez pour ouvrir instantanément la discussion WhatsApp</p>
+          </div>
+        </div>
+
+        <div class="contact-info-item reveal-left">
+          <i class="fas fa-map-marker-alt"></i>
+          <div>
+            <h4>Localisation</h4>
+            <p>Cotonou, Bénin</p>
+            <p style="font-size:.8rem;margin-top:.25rem;color:var(--color-text-muted);">Retrait sur place possible — contactez-nous pour l'adresse exacte</p>
+          </div>
+        </div>
+
+        <div class="contact-info-item reveal-left">
+          <i class="fas fa-clock"></i>
+          <div>
+            <h4>Disponibilité &amp; Commandes</h4>
+            <p><strong style="color:var(--color-primary);">Disponible 24h/24 · 7j/7</strong></p>
+            <p style="font-size:.8rem;margin-top:.25rem;color:var(--color-text-muted);">Prise de commande et assistance en continu sur WhatsApp, jour et nuit</p>
+          </div>
+        </div>
+
+        <div class="contact-info-item reveal-left">
+          <i class="fas fa-truck"></i>
+          <div>
+            <h4>Zone de Livraison</h4>
+            <p>Everywhere. Partout où vous êtes, Le MEL HOUSE est à votre disposition</p>
+            <p style="font-size:.8rem;margin-top:.25rem;color:var(--color-text-muted);">Livraison soignée et sécurisée en direct</p>
+          </div>
+        </div>
+
+        <!-- CTA WhatsApp Principal -->
+        <div style="padding:var(--space-md);background:linear-gradient(135deg,#1f130b,#0d0e12);border:1px solid rgba(255,106,19,0.3);border-radius:var(--radius-lg);margin-top:var(--space-sm);" class="reveal-left">
+          <p style="color:#fff;font-family:var(--font-heading);font-size:1.35rem;margin-bottom:var(--space-xs);">Besoin d'un conseil immédiat ?</p>
+          <p style="color:rgba(255,255,255,.7);font-size:0.875rem;margin-bottom:var(--space-md);line-height:1.6;">Notre équipe vous répond en direct pour vous présenter les modèles, vérifier les tailles et organiser votre livraison.</p>
+          <a href="#" class="btn btn-whatsapp btn-lg" data-whatsapp="Bonjour LE MEL HOUSE, je souhaite entrer en contact avec un conseiller." style="width:100%;justify-content:center;">
+            <i class="fab fa-whatsapp"></i> Échanger sur WhatsApp
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Réseaux sociaux + carte -->
+      <div class="reveal-right">
+
+        <!-- Carte placeholder -->
+        <div class="map-placeholder" style="margin-bottom:var(--space-md);">
+          <i class="fas fa-map-marker-alt"></i>
+          <div style="text-align:center;">
+            <strong>LE MEL HOUSE</strong>
+            <p style="font-size:.85rem;margin-top:.25rem;color:var(--color-text-muted);">Cotonou, Bénin</p>
+            <a href="https://maps.google.com/?q=Cotonou,+Benin" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="margin-top:.75rem;">
+              <i class="fas fa-external-link-alt"></i> Localiser sur Google Maps
+            </a>
+          </div>
+        </div>
+
+        <!-- Réseaux sociaux -->
+        <h3 style="margin-bottom:var(--space-sm);font-size:1.15rem;">Retrouvez-nous en ligne</h3>
+        <div class="social-grid">
+          <a href="#" class="social-card" data-whatsapp="">
+            <div class="social-card__icon whatsapp"><i class="fab fa-whatsapp"></i></div>
+            <div>
+              <p class="social-card__name">WhatsApp</p>
+              <p class="social-card__handle">+229 01 51 83 32 07</p>
+            </div>
+          </a>
+          <a href="#" class="social-card" target="_blank" rel="noopener noreferrer">
+            <div class="social-card__icon instagram"><i class="fab fa-instagram"></i></div>
+            <div>
+              <p class="social-card__name">Instagram</p>
+              <p class="social-card__handle">@lemelhouse</p>
+            </div>
+          </a>
+          <a href="#" class="social-card" target="_blank" rel="noopener noreferrer">
+            <div class="social-card__icon facebook"><i class="fab fa-facebook-f"></i></div>
+            <div>
+              <p class="social-card__name">Facebook</p>
+              <p class="social-card__handle">LE MEL HOUSE</p>
+            </div>
+          </a>
+          <a href="#" class="social-card" target="_blank" rel="noopener noreferrer">
+            <div class="social-card__icon tiktok"><i class="fab fa-tiktok"></i></div>
+            <div>
+              <p class="social-card__name">TikTok</p>
+              <p class="social-card__handle">@lemelhouse</p>
+            </div>
+          </a>
+        </div>
+
+      </div>
+
+    </div><!-- /contact-grid -->
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="header__logo">
+          <img src="assets/img/logo.png" alt="LE MEL HOUSE" class="header__logo-img" />
+          <div class="header__logo-text">LE MEL HOUSE<span>Fashion Boutique</span></div>
+        </a>
+        <p class="footer__desc">Votre boutique mode premium à Cotonou. Vêtements haut de gamme, montres et accessoires de caractère livrés à votre porte.</p>
+        <div class="footer__socials">
+          <a href="#" class="footer__social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="footer__social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="footer__social-link" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          <a href="#" class="footer__social-link" data-whatsapp="" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div>
+        <p class="footer__col-title">Catégories</p>
+        <ul class="footer__links">
+          <li><a href="boutique.html?cat=vetements">Vêtements</a></li>
+          <li><a href="boutique.html?cat=chaussures">Chaussures</a></li>
+          <li><a href="boutique.html?cat=montres">Montres</a></li>
+          <li><a href="boutique.html?cat=accessoires">Accessoires</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__col-title">Navigation</p>
+        <ul class="footer__links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="categories.html">Catégories</a></li>
+          <li><a href="boutique.html">Boutique</a></li>
+          <li><a href="galerie.html">Galerie</a></li>
+          <li><a href="comment-commander.html">Commander</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__col-title">Commander</p>
+        <div class="footer__whatsapp-block">
+          <p>Contactez-nous directement via WhatsApp 24h/24 &amp; 7j/7.</p>
+          <a href="#" class="btn btn-whatsapp" data-whatsapp=""><i class="fab fa-whatsapp"></i> +229 01 51 83 32 07</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2024 LE MEL HOUSE. Tous droits réservés.</span>
+      <span>Maison fondée avec passion pour l'élégance <i class="fas fa-heart" style="color:var(--color-primary)"></i></span>
+    </div>
+  </div>
+</footer>
+
+<a href="#" class="fab-whatsapp" data-whatsapp="" aria-label="Commander sur WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<script src="js/whatsapp.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

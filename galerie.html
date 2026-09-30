@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galerie — LE MEL HOUSE | Univers Mode &amp; Lookbook</title>
+  <meta name="description" content="Découvrez l'univers visuel et le lookbook authentique de LE MEL HOUSE : vêtements, montres de prestige et bijoux portés. Commandez directement via WhatsApp." />
+  <link rel="icon" type="image/png" href="assets/img/logo.png" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .gallery-masonry {
+      columns: 2;
+      column-gap: var(--space-md);
+      margin-bottom: var(--space-xl);
+    }
+    @media(min-width:640px) { .gallery-masonry { columns: 3; } }
+    @media(min-width:1024px) { .gallery-masonry { columns: 4; } }
+
+    .gallery-masonry-item {
+      break-inside: avoid;
+      margin-bottom: var(--space-md);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      cursor: pointer;
+      position: relative;
+      display: block;
+      background: var(--color-gray-100);
+      box-shadow: var(--shadow-sm);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .gallery-masonry-item:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+    .gallery-masonry-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.6s cubic-bezier(.25,1,.5,1);
+    }
+    .gallery-masonry-item:hover img {
+      transform: scale(1.06);
+    }
+    .gallery-masonry-item__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(11,11,12,.85) 0%, rgba(11,11,12,.2) 50%, transparent 100%);
+      opacity: 0;
+      transition: opacity var(--transition);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: var(--space-md);
+      color: #fff;
+    }
+    .gallery-masonry-item:hover .gallery-masonry-item__overlay {
+      opacity: 1;
+    }
+    .gallery-item__title {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 0.2rem;
+    }
+    .gallery-item__tag {
+      font-size: 0.75rem;
+      color: var(--color-primary);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 3000;
+      background: rgba(8, 8, 10, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-md);
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+    .lightbox.active { display: flex; }
+    .lightbox__content {
+      position: relative;
+      max-width: 90vw;
+      max-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .lightbox__img {
+      max-width: 90vw;
+      max-height: 72vh;
+      border-radius: var(--radius-md);
+      object-fit: contain;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    }
+    .lightbox__caption {
+      margin-top: var(--space-sm);
+      text-align: center;
+      color: #fff;
+    }
+    .lightbox__caption h3 {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      color: #fff;
+      margin-bottom: 0.25rem;
+    }
+    .lightbox__close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      color: #fff;
+      font-size: 2rem;
+      cursor: pointer;
+      transition: color var(--transition-fast);
+      background: rgba(255,255,255,0.1);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .lightbox__close:hover {
+      color: var(--color-primary);
+      background: rgba(255,255,255,0.2);
+    }
+    .lightbox__nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #fff;
+      font-size: 1.75rem;
+      cursor: pointer;
+      padding: 0.8rem;
+      transition: all var(--transition-fast);
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .lightbox__nav:hover {
+      color: var(--color-primary);
+      background: rgba(255,255,255,0.25);
+    }
+    .lightbox__prev { left: 1.5rem; }
+    .lightbox__next { right: 1.5rem; }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header" id="header">
+  <div class="container header__inner">
+    <a href="index.html" class="header__logo">
+      <img src="assets/img/logo.png" alt="LE MEL HOUSE Logo" class="header__logo-img" />
+      <div class="header__logo-text">LE MEL HOUSE<span>Fashion Boutique</span></div>
+    </a>
+    <nav class="header__nav">
+      <a href="index.html">Accueil</a>
+      <a href="categories.html">Catégories</a>
+      <a href="boutique.html">Boutique</a>
+      <a href="galerie.html" class="active">Galerie</a>
+      <a href="comment-commander.html">Commander</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header__actions">
+      <a href="#" class="btn btn-whatsapp btn-sm" data-whatsapp=""><i class="fab fa-whatsapp"></i> Commander</a>
+    </div>
+    <button class="header__hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<nav class="mobile-nav" id="mobile-nav">
+  <button class="mobile-nav__close" id="mobile-nav-close"><i class="fas fa-times"></i></button>
+  <a href="index.html">Accueil</a>
+  <a href="categories.html">Catégories</a>
+  <a href="boutique.html">Boutique</a>
+  <a href="galerie.html">Galerie</a>
+  <a href="comment-commander.html">Commander</a>
+  <a href="contact.html">Contact</a>
+  <div class="mobile-nav__cta">
+    <a href="#" class="btn btn-whatsapp" data-whatsapp=""><i class="fab fa-whatsapp"></i> Commander</a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb">
+      <a href="index.html">Accueil</a>
+      <i class="fas fa-chevron-right"></i>
+      <span>Galerie</span>
+    </nav>
+    <h1>Galerie &amp; Lookbook</h1>
+    <p>L'univers authentique de LE MEL HOUSE — pièces réelles, matières nobles, finitions d'exception.</p>
+  </div>
+</section>
+
+<!-- GALERIE -->
+<section class="section">
+  <div class="container">
+
+    <!-- Filter Bar -->
+    <div class="filter-bar" role="group" aria-label="Filtrer la galerie" style="justify-content:center;margin-bottom:var(--space-xl);">
+      <button class="filter-btn active" data-filter="all">Toutes les photos</button>
+      <button class="filter-btn" data-filter="vetements"><i class="fas fa-tshirt"></i> Vêtements</button>
+      <button class="filter-btn" data-filter="chaussures"><i class="fas fa-shoe-prints"></i> Chaussures</button>
+      <button class="filter-btn" data-filter="montres"><i class="fas fa-clock"></i> Montres</button>
+      <button class="filter-btn" data-filter="accessoires"><i class="fas fa-gem"></i> Bijoux &amp; Accessoires</button>
+    </div>
+
+    <div class="gallery-masonry" id="gallery-masonry">
+
+      <!-- Chaussures -->
+      <div class="gallery-masonry-item" data-category="chaussures" data-src="assets/img/produits/sneakers-nike-nocta-white-chrome.jpg" data-title="Sneakers Nike Nocta Glide White Chrome">
+        <img src="assets/img/produits/sneakers-nike-nocta-white-chrome.jpg" alt="Sneakers Nike Nocta Glide White Chrome" loading="lazy" />
+        <div class="gallery-masonry-item__overlay">
+          <p class="gallery-item__tag"><i class="fas fa-tag"></i> Chaussures</p>
+          <h3 class="gallery-item__title">Nike Nocta Glide White Chrome</h3>
+        </div>
+      </div>
+
+      <!-- Vêtements Nouveautés -->
+      <div class="gallery-masonry-item" data-category="vetements" data-src="assets/img/produits/jean-baggy-blanc-boucles.jpg" data-title="Jean Baggy Blanc Boucles Métalliques">
+        <img src="assets/img/produits/jean-baggy-blanc-boucles.jpg" alt="Jean Baggy Blanc Boucles Métalliques" loading="lazy" />
+        <div class="gallery-masonry-item__overlay">
+          <p class="gallery-item__tag"><i class="fas fa-tag"></i> Vêtements</p>
+          <h3 class="gallery-item__title">Jean Baggy Blanc Boucles Métal</h3>
+        </div>
+      </div>
+
+      <div class="gallery-masonry-item" data-category="vetements" data-src="assets/img/produits/pantalon-cargo-denim-anthracite.jpg" data-title="Pantalon Cargo Denim Anthracite">
+        <img src="assets/img/produits/pantalon-cargo-denim-anthracite.jpg" alt="Pantalon Cargo Denim Anthracite" loading="lazy" />
+        <div class="gallery-masonry-item__overlay">
+          <p class="gallery-item__tag"><i class="fas fa-tag"></i> Vêtements</p>
+          <h3 class="gallery-item__title">Cargo Denim Gris Anthracite</h3>
+        </div>
+      </div>
+
+      <!-- Montres Nouveautés -->
+      <div class="gallery-masonry-item" data-category="montres" data-src="assets/img/produits/montre-casio-acier-cadran-rouge.jpg" data-title="Montre Casio Acier Cadran Rouge Rubis">
+        <img src="assets/img/produits/montre-casio-acier-cadran-rouge.jpg" alt="Montre Casio Acier Cadran Rouge Rubis" loading="lazy" />
+        <div class="gallery-masonry-item__overlay">
+          <p class="gallery-item__tag"><i class="fas fa-tag"></i> Montres</p>
+          <h3 class="gallery-item__title">Casio Acier Cadran Rouge Rubis</h3>
+        </div>
+      </div>
+
+      <!-- Accessoires Nouveautés -->
+      <div class="gallery-masonry-item" data-category="accessoires" data-src="assets/img/produits/sac-a-dos-monogramme-urbain.jpg" data-title="Sac à Dos Monogramme Urbain">
+        <img src="assets/img/produits/sac-a-dos-monogramme-urbain.jpg" alt="Sac à Dos Monogramme Urbain" loading="lazy" />
+        <div class="gallery-masonry-item__overlay">
+          <p class="gallery-item__tag"><i class="fas fa-tag"></i> Accessoires</p>
+          <h3 class="gallery-item__title">Sac à Dos Monogramme Chevrons</h3>
+        </div>
+      </div>
+
+      <div class="gallery-masonry-item" data-category="vetements" data-src="assets/img/produits/jean-flare-fleurs.jpg" data-title="Jean Flare Imprimé Fleurs">
+        <img src="assets/img/produits/jean-flare-fleurs.jpg" alt="Jean Flare Imprimé Fleurs" loading="lazy" />
+        <div class="gallery-masonry-item__overlay">
+          <p class="gallery-item__tag"><i class="fas fa-tag"></i> Vêtements</p>
+          <h3 class="gallery-item__title">Jean Flare Imprimé Fleurs</h3>
+        </div>
+      </div>
+
+      <div class="gallery-masonry-item" data-category="montres" data-src="assets/img/produits/montre-rclock-quartz.jpg" data-title="Montre Rclock Quartz &amp; Gourmette">
+        <img src="assets/img/produits/montre-rclock-quartz.jpg" alt="Montre Rclock Quartz et Bracelet Acier" loading="lazy" />
+        <div class="gallery-masonry-item__overlay">
+          <p class="gallery-item__tag"><i class="fas fa-tag"></i> Montres</p>
+          <h3 class="gallery-item__title">Montre Rclock Quartz + Gourmette</h3>
+        </div>
+      </div>
+
+      <div class="gallery-masonry-item" data-category="vetements" data-src="assets/img/produits/tshirt-nike-oversize-noir.jpg" data-title="T-shirt Nike Oversize Noir">
+        <img src="assets/img/produits/tshirt-nike-oversize-noir.jpg" alt="T-shirt Nike Oversize Noir" loading="lazy" />
+        <div class="gallery-masonry-item__overlay">
+          <p class="gallery-item__tag"><i class="fas fa-tag"></i> Vêtements</p>
+          <h3 class="gallery-item__title">T-shirt Nike Oversize Noir</h3>
+        </div>
+      </div>
+
+      <div class="gallery-masonry-item" data-category="accessoires" data-src="assets/img/produits/ensemble-gourmette-bracelet-bague.jpg" data-title="Coffret Gourmette, Bracelet &amp; Bague">
+        <img src="assets/img/produits/ensemble-gourmette-bracelet-bague.jpg" alt="Ensemble Gourmette Bracelet et Bague" loading="lazy" />
+        <div class="gallery-masonry-item__overlay">
+          <p class="gallery-item__tag"><i class="fas fa-tag"></i> Accessoires</p>
+          <h3 class="gallery-item__title">Coffret Gourmette, Bracelet &amp; Bague</h3>
+        </div>
+      </div>
+
+      <div class="gallery-masonry-item" data-category="vetements" data-src="assets/img/produits/jogger-gris.jpg" data-title="Jogger Ample Gris Chiné">
+        <img src="assets/img/produits/jogger-gris.jpg" alt="Jogger Ample Gris Chiné" loading="lazy" />
+        <div class="gallery-masonry-item__overlay">
+          <p class="gallery-item__tag"><i class="fas fa-tag"></i> Vêtements</p>
+          <h3 class="gallery-item__title">Jogger Ample Gris Chiné</h3>
+        </div>
+      </div>
+
+      <div class="gallery-masonry-item" data-category="montres" data-src="assets/img/produits/montres-silicone-collection.jpg" data-title="Collection Montres Silicone">
+        <img src="assets/img/produits/montres-silicone-collection.jpg" alt="Collection Montres Silicone" loading="lazy" />
+        <div class="gallery-masonry-item__overlay">
+          <p class="gallery-item__tag"><i class="fas fa-tag"></i> Montres</p>
+          <h3 class="gallery-item__title">Collection Montres Silicone (4 Coloris)</h3>
+        </div>
+      </div>
+
+      <div class="gallery-masonry-item" data-category="vetements" data-src="assets/img/produits/tshirt-ml-chrome-hearts.jpg" data-title="T-shirt Manches Longues Chrome Hearts">
+        <img src="assets/img/produits/tshirt-ml-chrome-hearts.jpg" alt="T-shirt Manches Longues Chrome Hearts" loading="lazy" />
+        <div class="gallery-masonry-item__overlay">
+          <p class="gallery-item__tag"><i class="fas fa-tag"></i> Vêtements</p>
+          <h3 class="gallery-item__title">T-shirt ML Chrome Hearts</h3>
+        </div>
+      </div>
+
+      <div class="gallery-masonry-item" data-category="accessoires" data-src="assets/img/produits/apple-watch-ultra-kit.jpg" data-title="Apple Watch Ultra Kit Complet">
+        <img src="assets/img/produits/apple-watch-ultra-kit.jpg" alt="Apple Watch Ultra — Kit Complet" loading="lazy" />
+        <div class="gallery-masonry-item__overlay">
+          <p class="gallery-item__tag"><i class="fas fa-tag"></i> Accessoires</p>
+          <h3 class="gallery-item__title">Apple Watch Ultra — Kit Complet</h3>
+        </div>
+      </div>
+
+      <div class="gallery-masonry-item" data-category="accessoires" data-src="assets/img/produits/collier-double-croix.jpg" data-title="Collier Double Rang &amp; Croix">
+        <img src="assets/img/produits/collier-double-croix.jpg" alt="Collier Double Rang Croix" loading="lazy" />
+        <div class="gallery-masonry-item__overlay">
+          <p class="gallery-item__tag"><i class="fas fa-tag"></i> Accessoires</p>
+          <h3 class="gallery-item__title">Collier Double Rang &amp; Croix</h3>
+        </div>
+      </div>
+
+      <div class="gallery-masonry-item" data-category="montres" data-src="assets/img/produits/montre-sport.jpeg" data-title="Montre Sport Matte Black">
+        <img src="assets/img/produits/montre-sport.jpeg" alt="Montre Sport All-Black" loading="lazy" />
+        <div class="gallery-masonry-item__overlay">
+          <p class="gallery-item__tag"><i class="fas fa-tag"></i> Montres</p>
+          <h3 class="gallery-item__title">Montre Sport Matte Black</h3>
+        </div>
+      </div>
+
+      <div class="gallery-masonry-item" data-category="vetements" data-src="assets/img/produits/maillot-bresil.jpg" data-title="Maillot Brésil Édition Spéciale">
+        <img src="assets/img/produits/maillot-bresil.jpg" alt="Maillot Brésil Édition Spéciale" loading="lazy" />
+        <div class="gallery-masonry-item__overlay">
+          <p class="gallery-item__tag"><i class="fas fa-tag"></i> Vêtements</p>
+          <h3 class="gallery-item__title">Maillot Brésil Édition Spéciale</h3>
+        </div>
+      </div>
+
+      <div class="gallery-masonry-item" data-category="accessoires" data-src="assets/img/produits/collier-bracelet-maille.jpg" data-title="Collier &amp; Bracelet Maille Argentée">
+        <img src="assets/img/produits/collier-bracelet-maille.jpg" alt="Collier et Bracelet Maille Argentée" loading="lazy" />
+        <div class="gallery-masonry-item__overlay">
+          <p class="gallery-item__tag"><i class="fas fa-tag"></i> Accessoires</p>
+          <h3 class="gallery-item__title">Collier &amp; Bracelet Maille Argentée</h3>
+        </div>
+      </div>
+
+      <div class="gallery-masonry-item" data-category="vetements" data-src="assets/img/produits/tshirt-blanc-oversize.jpg" data-title="T-shirt Blanc Oversize Minimal">
+        <img src="assets/img/produits/tshirt-blanc-oversize.jpg" alt="T-shirt Blanc Oversize" loading="lazy" />
+        <div class="gallery-masonry-item__overlay">
+          <p class="gallery-item__tag"><i class="fas fa-tag"></i> Vêtements</p>
+          <h3 class="gallery-item__title">T-shirt Blanc Oversize Minimal</h3>
+        </div>
+      </div>
+
+      <div class="gallery-masonry-item" data-category="accessoires" data-src="assets/img/produits/apple-watch-coffret.jpg" data-title="Apple Watch Édition Coffret">
+        <img src="assets/img/produits/apple-watch-coffret.jpg" alt="Apple Watch Édition Coffret" loading="lazy" />
+        <div class="gallery-masonry-item__overlay">
+          <p class="gallery-item__tag"><i class="fas fa-tag"></i> Accessoires</p>
+          <h3 class="gallery-item__title">Apple Watch — Édition Boîtier &amp; Bracelet</h3>
+        </div>
+      </div>
+
+      <div class="gallery-masonry-item" data-category="vetements" data-src="assets/img/produits/maillot-espagne-floque.jpg" data-title="Maillot Espagne Flocage Personnalisé">
+        <img src="assets/img/produits/maillot-espagne-floque.jpg" alt="Maillot Espagne Flocage Personnalisé" loading="lazy" />
+        <div class="gallery-masonry-item__overlay">
+          <p class="gallery-item__tag"><i class="fas fa-tag"></i> Vêtements</p>
+          <h3 class="gallery-item__title">Maillot Espagne Flocage Personnalisé</h3>
+        </div>
+      </div>
+
+      <div class="gallery-masonry-item" data-category="vetements" data-src="assets/img/produits/maillot-flocage-humour.jpg" data-title="Maillot Floqué « J'ai Pas 2 Sous »">
+        <img src="assets/img/produits/maillot-flocage-humour.jpg" alt="Maillot Floqué Humour" loading="lazy" />
+        <div class="gallery-masonry-item__overlay">
+          <p class="gallery-item__tag"><i class="fas fa-tag"></i> Vêtements</p>
+          <h3 class="gallery-item__title">Maillot Floqué « J'ai Pas 2 Sous »</h3>
+        </div>
+      </div>
+
+    </div><!-- /gallery-masonry -->
+
+    <div style="text-align:center;color:var(--color-text-muted);font-size:0.9rem;margin-top:var(--space-md)">
+      <p><i class="fas fa-mouse-pointer" style="color:var(--color-primary);margin-right:0.35rem;"></i> Cliquez sur une photo pour l'agrandir et commander la pièce directement</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-banner">
+  <div class="container">
+    <h2>Un modèle vous inspire ?</h2>
+    <p>Chaque pièce de cette galerie peut être commandée en direct sur WhatsApp. Contactez notre équipe pour confirmer votre taille.</p>
+    <a href="#" class="btn btn-ghost btn-lg" data-whatsapp="Bonjour LE MEL HOUSE, j'ai vu une pièce dans la galerie qui m'intéresse.">
+      <i class="fab fa-whatsapp"></i> Commander une pièce de la galerie
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="header__logo">
+          <img src="assets/img/logo.png" alt="LE MEL HOUSE" class="header__logo-img" />
+          <div class="header__logo-text">LE MEL HOUSE<span>Fashion Boutique</span></div>
+        </a>
+        <p class="footer__desc">Votre boutique mode premium à Cotonou. Vêtements streetwear, montres et accessoires de caractère livrés à votre porte.</p>
+        <div class="footer__socials">
+          <a href="#" class="footer__social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="footer__social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="footer__social-link" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          <a href="#" class="footer__social-link" data-whatsapp="" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div>
+        <p class="footer__col-title">Catégories</p>
+        <ul class="footer__links">
+          <li><a href="boutique.html?cat=vetements">Vêtements</a></li>
+          <li><a href="boutique.html?cat=chaussures">Chaussures</a></li>
+          <li><a href="boutique.html?cat=montres">Montres</a></li>
+          <li><a href="boutique.html?cat=accessoires">Accessoires</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__col-title">Navigation</p>
+        <ul class="footer__links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="categories.html">Catégories</a></li>
+          <li><a href="boutique.html">Boutique</a></li>
+          <li><a href="galerie.html">Galerie</a></li>
+          <li><a href="comment-commander.html">Commander</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__col-title">Commander</p>
+        <div class="footer__whatsapp-block">
+          <p>Commandez directement via WhatsApp en direct.</p>
+          <a href="#" class="btn btn-whatsapp" data-whatsapp=""><i class="fab fa-whatsapp"></i> +229 01 51 83 32 07</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2024 LE MEL HOUSE. Tous droits réservés.</span>
+      <span>Maison fondée avec passion pour l'élégance <i class="fas fa-heart" style="color:var(--color-primary)"></i></span>
+    </div>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visionneuse d'images">
+  <button class="lightbox__close" id="lightbox-close" aria-label="Fermer"><i class="fas fa-times"></i></button>
+  <button class="lightbox__nav lightbox__prev" id="lightbox-prev" aria-label="Image précédente"><i class="fas fa-chevron-left"></i></button>
+  <div class="lightbox__content">
+    <img src="" alt="Galerie LE MEL HOUSE" class="lightbox__img" id="lightbox-img" />
+    <div class="lightbox__caption">
+      <h3 id="lightbox-title"></h3>
+      <a href="#" class="btn btn-whatsapp btn-sm" id="lightbox-wa-btn" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i> Commander cet article sur WhatsApp
+      </a>
+    </div>
+  </div>
+  <button class="lightbox__nav lightbox__next" id="lightbox-next" aria-label="Image suivante"><i class="fas fa-chevron-right"></i></button>
+</div>
+
+<a href="#" class="fab-whatsapp" data-whatsapp="" aria-label="Commander sur WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<script src="js/whatsapp.js"></script>
+<script src="js/main.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    let items = Array.from(document.querySelectorAll('.gallery-masonry-item'));
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lightbox-img');
+    const lbTitle = document.getElementById('lightbox-title');
+    const lbWaBtn = document.getElementById('lightbox-wa-btn');
+    let current = 0;
+
+    function getVisibleItems() {
+      return items.filter(el => el.style.display !== 'none');
+    }
+
+    const open = (item) => {
+      const visible = getVisibleItems();
+      current = visible.indexOf(item);
+      lbImg.src = item.dataset.src;
+      const title = item.dataset.title || 'Article LE MEL HOUSE';
+      lbTitle.textContent = title;
+      lbWaBtn.href = getWhatsAppLink(title);
+      lb.classList.add('active');
+      document.body.classList.add('no-scroll');
+    };
+
+    const close = () => {
+      lb.classList.remove('active');
+      document.body.classList.remove('no-scroll');
+    };
+
+    items.forEach((item) => item.addEventListener('click', () => open(item)));
+    document.getElementById('lightbox-close').addEventListener('click', close);
+
+    document.getElementById('lightbox-prev').addEventListener('click', () => {
+      const visible = getVisibleItems();
+      if (!visible.length) return;
+      current = (current - 1 + visible.length) % visible.length;
+      open(visible[current]);
+    });
+
+    document.getElementById('lightbox-next').addEventListener('click', () => {
+      const visible = getVisibleItems();
+      if (!visible.length) return;
+      current = (current + 1) % visible.length;
+      open(visible[current]);
+    });
+
+    lb.addEventListener('click', e => { if (e.target === lb) close(); });
+    document.addEventListener('keydown', e => {
+      if (!lb.classList.contains('active')) return;
+      if (e.key === 'Escape') close();
+      const visible = getVisibleItems();
+      if (e.key === 'ArrowLeft') {
+        current = (current - 1 + visible.length) % visible.length;
+        open(visible[current]);
+      }
+      if (e.key === 'ArrowRight') {
+        current = (current + 1) % visible.length;
+        open(visible[current]);
+      }
+    });
+
+    const filterBtns = document.querySelectorAll('.filter-bar .filter-btn');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        items.forEach(item => {
+          const match = filter === 'all' || item.dataset.category === filter;
+          item.style.display = match ? 'block' : 'none';
+        });
+      });
+    });
+  });
+</script>
+</body>
+</html>

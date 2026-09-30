@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boutique — LE MEL HOUSE | Catalogue Complet</title>
+  <meta name="description" content="Parcourez le catalogue complet de LE MEL HOUSE : vêtements, chaussures, montres et accessoires. Filtrez par collection et commandez directement via WhatsApp." />
+  <link rel="icon" type="image/png" href="assets/img/logo.png" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header" id="header">
+  <div class="container header__inner">
+    <a href="index.html" class="header__logo">
+      <img src="assets/img/logo.png" alt="LE MEL HOUSE Logo" class="header__logo-img" />
+      <div class="header__logo-text">LE MEL HOUSE<span>Fashion Boutique</span></div>
+    </a>
+    <nav class="header__nav">
+      <a href="index.html">Accueil</a>
+      <a href="categories.html">Catégories</a>
+      <a href="boutique.html" class="active">Boutique</a>
+      <a href="galerie.html">Galerie</a>
+      <a href="comment-commander.html">Commander</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header__actions">
+      <a href="#" class="btn btn-whatsapp btn-sm" data-whatsapp=""><i class="fab fa-whatsapp"></i> Commander</a>
+    </div>
+    <button class="header__hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<nav class="mobile-nav" id="mobile-nav">
+  <button class="mobile-nav__close" id="mobile-nav-close"><i class="fas fa-times"></i></button>
+  <a href="index.html">Accueil</a>
+  <a href="categories.html">Catégories</a>
+  <a href="boutique.html">Boutique</a>
+  <a href="galerie.html">Galerie</a>
+  <a href="comment-commander.html">Commander</a>
+  <a href="contact.html">Contact</a>
+  <div class="mobile-nav__cta">
+    <a href="#" class="btn btn-whatsapp" data-whatsapp=""><i class="fab fa-whatsapp"></i> Commander</a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb">
+      <a href="index.html">Accueil</a>
+      <i class="fas fa-chevron-right"></i>
+      <span>Boutique</span>
+    </nav>
+    <h1>Notre Catalogue</h1>
+    <p>Explorez toutes nos pièces exclusives. Filtrez par collection et commandez directement sur WhatsApp.</p>
+  </div>
+</section>
+
+<!-- CATALOGUE -->
+<section class="section">
+  <div class="container">
+
+    <!-- Filter Bar -->
+    <div class="filter-bar" role="group" aria-label="Filtrer par catégorie">
+      <button class="filter-btn active" data-filter="all" id="filter-all">Toutes nos collections</button>
+      <button class="filter-btn" data-filter="vetements" id="filter-vetements"><i class="fas fa-tshirt"></i> Vêtements</button>
+      <button class="filter-btn" data-filter="chaussures" id="filter-chaussures"><i class="fas fa-shoe-prints"></i> Chaussures</button>
+      <button class="filter-btn" data-filter="montres" id="filter-montres"><i class="fas fa-clock"></i> Montres</button>
+      <button class="filter-btn" data-filter="accessoires" id="filter-accessoires"><i class="fas fa-gem"></i> Accessoires</button>
+    </div>
+
+    <!-- Products Grid -->
+    <div class="products-grid" id="products-grid">
+
+      <!-- VÊTEMENTS -->
+      <article class="product-card" data-category="vetements">
+        <div class="product-card__img-wrap">
+          <img src="assets/img/produits/jean-baggy-blanc-boucles.jpg" alt="Jean Baggy Blanc Boucles Métalliques" class="product-card__img" loading="lazy" />
+          <div class="product-card__badge"><span class="badge badge-category">Nouveauté</span></div>
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Jean Baggy Blanc Boucles Métalliques</h3>
+          <p class="product-card__status"><i class="fas fa-fire"></i> Coupe Loose · Détails Métal</p>
+          <a href="#" class="btn btn-primary btn-sm product-card__cta" data-whatsapp="Jean Baggy Blanc Boucles Métalliques">Commander sur WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="vetements">
+        <div class="product-card__img-wrap">
+          <img src="assets/img/produits/pantalon-cargo-denim-anthracite.jpg" alt="Pantalon Cargo Denim Anthracite Délavé" class="product-card__img" loading="lazy" />
+          <div class="product-card__badge"><span class="badge badge-category">Nouveauté</span></div>
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Pantalon Cargo Denim Anthracite</h3>
+          <p class="product-card__status"><i class="fas fa-check-circle"></i> Coupe Skater Baggy · Poches Cargo</p>
+          <a href="#" class="btn btn-primary btn-sm product-card__cta" data-whatsapp="Pantalon Cargo Denim Anthracite Délavé">Commander sur WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="vetements">
+        <div class="product-card__img-wrap">
+          <img src="assets/img/produits/tshirt-nike-oversize-noir.jpg" alt="T-shirt Nike Oversize Noir" class="product-card__img" loading="lazy" />
+          <div class="product-card__badge"><span class="badge badge-category">Vêtements</span></div>
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">T-shirt Nike Oversize Noir</h3>
+          <p class="product-card__status"><i class="fas fa-check-circle"></i> En stock · Coupe Streetwear</p>
+          <a href="produits/tshirt-nike-oversize-noir.html" class="btn btn-primary btn-sm product-card__cta">Voir le produit</a>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="vetements">
+        <div class="product-card__img-wrap">
+          <img src="assets/img/produits/tshirt-ml-chrome-hearts.jpg" alt="T-shirt Manches Longues Chrome Hearts" class="product-card__img" loading="lazy" />
+          <div class="product-card__badge"><span class="badge badge-category">Vêtements</span></div>
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">T-shirt ML Chrome Hearts</h3>
+          <p class="product-card__status"><i class="fas fa-fire"></i> Édition Limitée · Tendance Street</p>
+          <a href="produits/tshirt-ml-chrome-hearts.html" class="btn btn-primary btn-sm product-card__cta">Voir le produit</a>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="vetements">
+        <div class="product-card__img-wrap">
+          <img src="assets/img/produits/tshirt-blanc-oversize.jpg" alt="T-shirt Blanc Oversize" class="product-card__img" loading="lazy" />
+          <div class="product-card__badge"><span class="badge badge-category">Vêtements</span></div>
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">T-shirt Blanc Oversize Minimal</h3>
+          <p class="product-card__status"><i class="fas fa-star"></i> Coupe Ample · Coton Premium</p>
+          <a href="#" class="btn btn-primary btn-sm product-card__cta" data-whatsapp="T-shirt Blanc Oversize Minimal">Commander sur WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="vetements">
+        <div class="product-card__img-wrap">
+          <img src="assets/img/produits/jean-flare-fleurs.jpg" alt="Jean Flare Imprimé Fleurs" class="product-card__img" loading="lazy" />
+          <div class="product-card__badge"><span class="badge badge-category">Vêtements</span></div>
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Jean Flare Imprimé Fleurs</h3>
+          <p class="product-card__status"><i class="fas fa-sparkles"></i> Coupe Évasée · Finitions Effilochées</p>
+          <a href="produits/jean-flare-fleurs.html" class="btn btn-primary btn-sm product-card__cta">Voir le produit</a>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="vetements">
+        <div class="product-card__img-wrap">
+          <img src="assets/img/produits/jogger-gris.jpg" alt="Jogger Gris Chiné" class="product-card__img" loading="lazy" />
+          <div class="product-card__badge"><span class="badge badge-category">Vêtements</span></div>
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Jogger Ample Gris Chiné</h3>
+          <p class="product-card__status"><i class="fas fa-check-circle"></i> Confort &amp; Style Streetwear</p>
+          <a href="#" class="btn btn-primary btn-sm product-card__cta" data-whatsapp="Jogger Ample Gris Chiné">Commander sur WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="vetements">
+        <div class="product-card__img-wrap">
+          <img src="assets/img/produits/maillot-flocage-humour.jpg" alt="Maillot Floqué J'ai pas 2 sous" class="product-card__img" loading="lazy" />
+          <div class="product-card__badge"><span class="badge badge-category">Vêtements</span></div>
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Maillot Floqué « J'ai Pas 2 Sous »</h3>
+          <p class="product-card__status"><i class="fas fa-tshirt"></i> Flocage Exclusif Personnalisé</p>
+          <a href="#" class="btn btn-primary btn-sm product-card__cta" data-whatsapp="Maillot Floqué J'ai Pas 2 Sous">Commander sur WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="vetements">
+        <div class="product-card__img-wrap">
+          <img src="assets/img/produits/maillot-espagne-floque.jpg" alt="Maillot Espagne Floqué" class="product-card__img" loading="lazy" />
+          <div class="product-card__badge"><span class="badge badge-category">Vêtements</span></div>
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Maillot Espagne Floqué Personnalisé</h3>
+          <p class="product-card__status"><i class="fas fa-medal"></i> Flocage Nom &amp; Numéro sur Mesure</p>
+          <a href="#" class="btn btn-primary btn-sm product-card__cta" data-whatsapp="Maillot Espagne Floqué Personnalisé">Commander sur WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="vetements">
+        <div class="product-card__img-wrap">
+          <img src="assets/img/produits/maillot-bresil.jpg" alt="Maillot Brésil" class="product-card__img" loading="lazy" />
+          <div class="product-card__badge"><span class="badge badge-category">Vêtements</span></div>
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Maillot Édition Spéciale Brésil</h3>
+          <p class="product-card__status"><i class="fas fa-check-circle"></i> Édition Signature Jaune &amp; Vert</p>
+          <a href="#" class="btn btn-primary btn-sm product-card__cta" data-whatsapp="Maillot Brésil Édition Spéciale">Commander sur WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="vetements">
+        <div class="product-card__img-wrap">
+          <img src="assets/img/produits/jean-baggy-noir-cloute.jpg" alt="Jean Baggy Noir Clouté" class="product-card__img" loading="lazy" />
+          <div class="product-card__badge"><span class="badge badge-category">Vêtements</span></div>
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Jean Baggy Noir Clouté</h3>
+          <p class="product-card__status"><i class="fas fa-fire"></i> Coupe Large · Clous Métalliques</p>
+          <a href="#" class="btn btn-primary btn-sm product-card__cta" data-whatsapp="Jean Baggy Noir Clouté">Commander sur WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="vetements">
+        <div class="product-card__img-wrap">
+          <img src="assets/img/produits/jean-baggy-delave-imprime-88.jpg" alt="Jean Baggy Délavé Imprimé 88" class="product-card__img" loading="lazy" />
+          <div class="product-card__badge"><span class="badge badge-category">Vêtements</span></div>
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Jean Baggy Délavé Imprimé 88</h3>
+          <p class="product-card__status"><i class="fas fa-check-circle"></i> Coupe Large · Patch Brodé</p>
+          <a href="#" class="btn btn-primary btn-sm product-card__cta" data-whatsapp="Jean Baggy Délavé Imprimé 88">Commander sur WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="vetements">
+        <div class="product-card__img-wrap">
+          <img src="assets/img/produits/jean-large-delave-clair.jpg" alt="Jean Large Délavé Clair" class="product-card__img" loading="lazy" />
+          <div class="product-card__badge"><span class="badge badge-category">Vêtements</span></div>
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Jean Large Délavé Clair</h3>
+          <p class="product-card__status"><i class="fas fa-check-circle"></i> Coupe Wide Leg · Taille Haute</p>
+          <a href="#" class="btn btn-primary btn-sm product-card__cta" data-whatsapp="Jean Large Délavé Clair">Commander sur WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="vetements">
+        <div class="product-card__img-wrap">
+          <img src="assets/img/produits/short-jean-delave-eclaboussures.jpg" alt="Short en Jean Délavé Motif Éclaboussures" class="product-card__img" loading="lazy" />
+          <div class="product-card__badge"><span class="badge badge-category">Vêtements</span></div>
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Short en Jean Délavé Motif Éclaboussures</h3>
+          <p class="product-card__status"><i class="fas fa-sparkles"></i> Coupe Large · Effet Peinture</p>
+          <a href="#" class="btn btn-primary btn-sm product-card__cta" data-whatsapp="Short en Jean Délavé Motif Éclaboussures">Commander sur WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="vetements">
+        <div class="product-card__img-wrap">
+          <img src="assets/img/produits/short-jean-baggy-delave.jpg" alt="Short en Jean Baggy Délavé" class="product-card__img" loading="lazy" />
+          <div class="product-card__badge"><span class="badge badge-category">Vêtements</span></div>
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Short en Jean Baggy Délavé</h3>
+          <p class="product-card__status"><i class="fas fa-check-circle"></i> Coupe Baggy · Longueur Mi-Mollet</p>
+          <a href="#" class="btn btn-primary btn-sm product-card__cta" data-whatsapp="Short en Jean Baggy Délavé">Commander sur WhatsApp</a>
+        </div>
+      </article>
+
+      <!-- CHAUSSURES -->
+      <article class="product-card" data-category="chaussures">
+        <div class="product-card__img-wrap">
+          <img src="assets/img/produits/sneakers-nike-nocta-white-chrome.jpg" alt="Sneakers Nike Nocta Glide White Chrome" class="product-card__img" loading="lazy" />
+          <div class="product-card__badge"><span class="badge badge-category">Chaussures</span></div>
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Nike Nocta Glide White Chrome</h3>
+          <p class="product-card__status"><i class="fas fa-fire"></i> Édition Limitée · Finitions Chrome</p>
+          <a href="produits/sneakers-nike-nocta-white-chrome.html" class="btn btn-primary btn-sm product-card__cta">Voir le produit</a>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="chaussures">
+        <div class="product-card__img-wrap">
+          <img src="assets/img/produits/birkenstock-boston-clogs.jpg" alt="Sabots Birkenstock Boston" class="product-card__img" loading="lazy" />
+          <div class="product-card__badge"><span class="badge badge-category">Nouveauté</span></div>
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Sabots Birkenstock Boston</h3>
+          <p class="product-card__status"><i class="fas fa-palette"></i> 8 Coloris Disponibles</p>
+          <a href="#" class="btn btn-primary btn-sm product-card__cta" data-whatsapp="Sabots Birkenstock Boston">Commander sur WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="chaussures">
+        <div class="product-card__img-wrap">
+          <img src="assets/img/produits/crocs-camouflage-charms.jpg" alt="Crocs Camouflage et Charms" class="product-card__img" loading="lazy" />
+          <div class="product-card__badge"><span class="badge badge-category">Nouveauté</span></div>
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Crocs Camouflage &amp; Charms</h3>
+          <p class="product-card__status"><i class="fas fa-fire"></i> Motif Camo · Charms Inclus</p>
+          <a href="#" class="btn btn-primary btn-sm product-card__cta" data-whatsapp="Crocs Camouflage et Charms">Commander sur WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="chaussures">
+        <div class="product-card__img-wrap">
+          <img src="assets/img/produits/sneakers-nike-shox-tl-noir.jpg" alt="Sneakers Nike Shox TL Noires" class="product-card__img" loading="lazy" />
+          <div class="product-card__badge"><span class="badge badge-category">Chaussures</span></div>
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Sneakers Nike Shox TL Noires</h3>
+          <p class="product-card__status"><i class="fas fa-check-circle"></i> Amorti Shox · Tout Noir</p>
+          <a href="#" class="btn btn-primary btn-sm product-card__cta" data-whatsapp="Sneakers Nike Shox TL Noires">Commander sur WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="product-card product-card--special" data-category="chaussures">
+        <div class="product-card__img-wrap">
+          <img src="assets/img/cat-chaussures.svg" alt="Collection Chaussures &amp; Sneakers LE MEL HOUSE" class="product-card__img" loading="lazy" />
+          <div class="product-card__badge"><span class="badge" style="background:#D4AF37;color:#111;">Service VIP</span></div>
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Pointures &amp; Modèles sur Demande</h3>
+          <p class="product-card__status"><i class="fas fa-crown"></i> Conciergerie Baskets &amp; Sneakers</p>
+          <p style="font-size:0.8rem;color:rgba(255,255,255,0.7);margin-bottom:var(--space-sm);line-height:1.4;">
+            Vous recherchez un modèle ou une pointure spécifique ? Notre service VIP vous déniche votre paire sur mesure.
+          </p>
+          <a href="#" class="btn btn-whatsapp btn-sm product-card__cta" data-whatsapp="Bonjour, je recherche un modèle précis de sneakers à ma pointure. Pouvez-vous m'aider ?">
+            <i class="fab fa-whatsapp"></i> Demander une pointure
+          </a>
+        </div>
+      </article>
+
+      <!-- MONTRES -->
+      <article class="product-card" data-category="montres">
+        <div class="product-card__img-wrap">
+          <img src="assets/img/produits/montre-casio-acier-cadran-rouge.jpg" alt="Montre Casio Acier Cadran Rouge" class="product-card__img" loading="lazy" />
+          <div class="product-card__badge"><span class="badge badge-category">Nouveauté</span></div>
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Montre Casio Acier Cadran Rouge Rubis</h3>
+          <p class="product-card__status"><i class="fas fa-gem"></i> Cadran Soleil Rouge · Boîtier Acier</p>
+          <a href="#" class="btn btn-primary btn-sm product-card__cta" data-whatsapp="Montre Casio Acier Cadran Rouge Rubis">Commander sur WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="montres">
+        <div class="product-card__img-wrap">
+          <img src="assets/img/produits/montre-rclock-quartz.jpg" alt="Montre Rclock Quartz et Bracelet" class="product-card__img" loading="lazy" />
+          <div class="product-card__badge"><span class="badge badge-category">Montres</span></div>
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Montre Rclock Quartz + Bracelet</h3>
+          <p class="product-card__status"><i class="fas fa-crown"></i> Coffret Prestige · Acier Inoxydable</p>
+          <a href="produits/montre-rclock-quartz.html" class="btn btn-primary btn-sm product-card__cta">Voir le produit</a>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="montres">
+        <div class="product-card__img-wrap">
+          <img src="assets/img/produits/montres-silicone-collection.jpg" alt="Collection Montres Silicone" class="product-card__img" loading="lazy" />
+          <div class="product-card__badge"><span class="badge badge-category">Montres</span></div>
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Collection Montres Silicone (4 Coloris)</h3>
+          <p class="product-card__status"><i class="fas fa-palette"></i> Noir, Bleu, Vert &amp; Blanc</p>
+          <a href="#" class="btn btn-primary btn-sm product-card__cta" data-whatsapp="Collection Montres Silicone (Noir, Bleu, Vert, Blanc)">Commander sur WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="montres">
+        <div class="product-card__img-wrap">
+          <img src="assets/img/produits/montre-sport.jpeg" alt="Montre Chronographe Sport Noir Brut" class="product-card__img" loading="lazy" />
+          <div class="product-card__badge"><span class="badge badge-category">Montres</span></div>
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Montre Sport Matte Black Édition</h3>
+          <p class="product-card__status"><i class="fas fa-gem"></i> Coffret Écrin · Finition All-Black</p>
+          <a href="#" class="btn btn-primary btn-sm product-card__cta" data-whatsapp="Montre Sport Matte Black Édition avec écrin">Commander sur WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="montres">
+        <div class="product-card__img-wrap">
+          <img src="assets/img/produits/montre-chrono-squelette-noire.jpg" alt="Montre Chronographe Squelette Noire" class="product-card__img" loading="lazy" />
+          <div class="product-card__badge"><span class="badge badge-category">Nouveauté</span></div>
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Montre Chronographe Squelette Noire</h3>
+          <p class="product-card__status"><i class="fas fa-crown"></i> Cadran Squelette · Bracelet Silicone</p>
+          <a href="#" class="btn btn-primary btn-sm product-card__cta" data-whatsapp="Montre Chronographe Squelette Noire">Commander sur WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="montres">
+        <div class="product-card__img-wrap">
+          <img src="assets/img/produits/collection-montres-chrono-squelette.jpg" alt="Collection Montres Chronographes Squelette" class="product-card__img" loading="lazy" />
+          <div class="product-card__badge"><span class="badge badge-category">Montres</span></div>
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Collection Montres Chronographes Squelette</h3>
+          <p class="product-card__status"><i class="fas fa-palette"></i> Plusieurs Coloris · Cadran Squelette</p>
+          <a href="#" class="btn btn-primary btn-sm product-card__cta" data-whatsapp="Collection Montres Chronographes Squelette">Commander sur WhatsApp</a>
+        </div>
+      </article>
+
+      <!-- ACCESSOIRES -->
+      <article class="product-card" data-category="accessoires">
+        <div class="product-card__img-wrap">
+          <img src="assets/img/produits/sac-a-dos-monogramme-urbain.jpg" alt="Sac à Dos Monogramme Urbain Bleu et Noir" class="product-card__img" loading="lazy" />
+          <div class="product-card__badge"><span class="badge badge-category">Nouveauté</span></div>
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Sac à Dos Monogramme Urbain</h3>
+          <p class="product-card__status"><i class="fas fa-crown"></i> Motif Chevrons · Bleu &amp; Noir</p>
+          <a href="#" class="btn btn-primary btn-sm product-card__cta" data-whatsapp="Sac à Dos Monogramme Urbain (Bleu &amp; Noir)">Commander sur WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="accessoires">
+        <div class="product-card__img-wrap">
+          <img src="assets/img/produits/collier-bracelet-maille.jpg" alt="Collier et Bracelet Maille Argentée" class="product-card__img" loading="lazy" />
+          <div class="product-card__badge"><span class="badge badge-category">Accessoires</span></div>
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Collier &amp; Bracelet Maille Argentée</h3>
+          <p class="product-card__status"><i class="fas fa-gem"></i> Parure Élégance · Finition Argent</p>
+          <a href="produits/collier-bracelet-maille.html" class="btn btn-primary btn-sm product-card__cta">Voir le produit</a>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="accessoires">
+        <div class="product-card__img-wrap">
+          <img src="assets/img/produits/ensemble-gourmette-bracelet-bague.jpg" alt="Ensemble Gourmette, Bracelet et Bague" class="product-card__img" loading="lazy" />
+          <div class="product-card__badge"><span class="badge badge-category">Accessoires</span></div>
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Ensemble Gourmette, Bracelet &amp; Bague</h3>
+          <p class="product-card__status"><i class="fas fa-gem"></i> Coffret Trio Prestige Acier</p>
+          <a href="#" class="btn btn-primary btn-sm product-card__cta" data-whatsapp="Ensemble Gourmette Bracelet et Bague">Commander sur WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="accessoires">
+        <div class="product-card__img-wrap">
+          <img src="assets/img/produits/collier-double-croix.jpg" alt="Collier Double Rang Croix" class="product-card__img" loading="lazy" />
+          <div class="product-card__badge"><span class="badge badge-category">Accessoires</span></div>
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Collier Double Rang &amp; Croix</h3>
+          <p class="product-card__status"><i class="fas fa-cross"></i> Chaîne Acier &amp; Pendentif Délicat</p>
+          <a href="#" class="btn btn-primary btn-sm product-card__cta" data-whatsapp="Collier Double Rang Pendentif Croix">Commander sur WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="accessoires">
+        <div class="product-card__img-wrap">
+          <img src="assets/img/produits/apple-watch-ultra-kit.jpg" alt="Apple Watch Ultra — Kit Complet" class="product-card__img" loading="lazy" />
+          <div class="product-card__badge"><span class="badge badge-category">Accessoires</span></div>
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Apple Watch Ultra — Kit Complet</h3>
+          <p class="product-card__status"><i class="fas fa-bolt"></i> Pack Intégral avec Écouteurs &amp; Chargeur</p>
+          <a href="#" class="btn btn-primary btn-sm product-card__cta" data-whatsapp="Apple Watch Ultra Kit Complet">Commander sur WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="accessoires">
+        <div class="product-card__img-wrap">
+          <img src="assets/img/produits/apple-watch-coffret.jpg" alt="Apple Watch Édition Coffret" class="product-card__img" loading="lazy" />
+          <div class="product-card__badge"><span class="badge badge-category">Accessoires</span></div>
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Apple Watch — Édition Boîtier &amp; Bracelet</h3>
+          <p class="product-card__status"><i class="fas fa-box-open"></i> Boîte Cadeau Originale</p>
+          <a href="#" class="btn btn-primary btn-sm product-card__cta" data-whatsapp="Apple Watch Édition Coffret">Commander sur WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="accessoires">
+        <div class="product-card__img-wrap">
+          <img src="assets/img/produits/sac-a-dos-toile-chevrons-vert.jpg" alt="Sac à Dos Toile Chevrons Vert" class="product-card__img" loading="lazy" />
+          <div class="product-card__badge"><span class="badge badge-category">Nouveauté</span></div>
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Sac à Dos Toile Chevrons Vert</h3>
+          <p class="product-card__status"><i class="fas fa-check-circle"></i> Motif Chevrons · Finitions Cuir</p>
+          <a href="#" class="btn btn-primary btn-sm product-card__cta" data-whatsapp="Sac à Dos Toile Chevrons Vert">Commander sur WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="accessoires">
+        <div class="product-card__img-wrap">
+          <img src="assets/img/produits/bagues-chevalieres-pierre.jpg" alt="Bagues Chevalières Pierre" class="product-card__img" loading="lazy" />
+          <div class="product-card__badge"><span class="badge badge-category">Nouveauté</span></div>
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Bagues Chevalières Pierre</h3>
+          <p class="product-card__status"><i class="fas fa-palette"></i> Or ou Argent · Plusieurs Motifs</p>
+          <a href="#" class="btn btn-primary btn-sm product-card__cta" data-whatsapp="Bagues Chevalières Pierre">Commander sur WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="accessoires">
+        <div class="product-card__img-wrap">
+          <img src="assets/img/produits/colliers-croix-3-coloris.jpg" alt="Colliers Pendentif Croix 3 Coloris" class="product-card__img" loading="lazy" />
+          <div class="product-card__badge"><span class="badge badge-category">Accessoires</span></div>
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Collier Pendentif Croix (3 Coloris)</h3>
+          <p class="product-card__status"><i class="fas fa-palette"></i> Argent, Noir ou Doré</p>
+          <a href="#" class="btn btn-primary btn-sm product-card__cta" data-whatsapp="Collier Pendentif Croix 3 Coloris">Commander sur WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="accessoires">
+        <div class="product-card__img-wrap">
+          <img src="assets/img/produits/bagues-chevalieres-argent-vintage.jpg" alt="Bagues Chevalières Argentées Vintage" class="product-card__img" loading="lazy" />
+          <div class="product-card__badge"><span class="badge badge-category">Accessoires</span></div>
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Bagues Chevalières Argentées Vintage</h3>
+          <p class="product-card__status"><i class="fas fa-gem"></i> Finition Acier · Motifs Gravés</p>
+          <a href="#" class="btn btn-primary btn-sm product-card__cta" data-whatsapp="Bagues Chevalières Argentées Vintage">Commander sur WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="accessoires">
+        <div class="product-card__img-wrap">
+          <img src="assets/img/produits/bagues-anneaux-graves.jpg" alt="Bagues Anneaux Gravés" class="product-card__img" loading="lazy" />
+          <div class="product-card__badge"><span class="badge badge-category">Accessoires</span></div>
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Bagues Anneaux Gravés</h3>
+          <p class="product-card__status"><i class="fas fa-check-circle"></i> Acier Argenté ou Noir</p>
+          <a href="#" class="btn btn-primary btn-sm product-card__cta" data-whatsapp="Bagues Anneaux Gravés">Commander sur WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="accessoires">
+        <div class="product-card__img-wrap">
+          <img src="assets/img/produits/collier-bracelet-chaine-cubaine-argent.jpg" alt="Collier et Bracelet Chaîne Cubaine Argentée" class="product-card__img" loading="lazy" />
+          <div class="product-card__badge"><span class="badge badge-category">Accessoires</span></div>
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Collier &amp; Bracelet Chaîne Cubaine Argentée</h3>
+          <p class="product-card__status"><i class="fas fa-gem"></i> Maille Cubaine · Acier Massif</p>
+          <a href="#" class="btn btn-primary btn-sm product-card__cta" data-whatsapp="Collier et Bracelet Chaîne Cubaine Argentée">Commander sur WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="accessoires">
+        <div class="product-card__img-wrap">
+          <img src="assets/img/produits/collier-bracelet-croix-dore.jpg" alt="Collier et Bracelet Croix Dorés" class="product-card__img" loading="lazy" />
+          <div class="product-card__badge"><span class="badge badge-category">Accessoires</span></div>
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Collier &amp; Bracelet Croix Dorés</h3>
+          <p class="product-card__status"><i class="fas fa-crown"></i> Finition Dorée · Parure Duo</p>
+          <a href="#" class="btn btn-primary btn-sm product-card__cta" data-whatsapp="Collier et Bracelet Croix Dorés">Commander sur WhatsApp</a>
+        </div>
+      </article>
+
+    </div><!-- /products-grid -->
+
+    <!-- Message Conciergerie par Catégorie -->
+    <div class="category-inquiry-box" id="boutique-category-inquiry" style="margin-top:var(--space-xl);">
+      <div class="category-inquiry-box__icon"><i class="fab fa-whatsapp"></i></div>
+      <p class="category-inquiry-box__text" id="boutique-inquiry-text">
+        Si vous voulez d'autres produits ou des modèles similaires de cette catégorie, vous pouvez demander plus de détails <a href="https://wa.me/2290151833207?text=Bonjour%20LE%20MEL%20HOUSE%2C%20je%20recherche%20d%27autres%20articles%20ou%20des%20pi%C3%A8ces%20personnalis%C3%A9es%20dans%20votre%20catalogue.%20Pourriez-vous%20me%20donner%20plus%20de%20d%C3%A9tails%20%3F" class="category-inquiry-box__link" id="boutique-inquiry-link" target="_blank" rel="noopener noreferrer">ici</a>.
+      </p>
+    </div>
+
+    <!-- Message "aucun résultat" -->
+    <div id="no-results" style="display:none;text-align:center;padding:var(--space-xl);color:var(--color-text-muted);">
+      <i class="fas fa-box-open" style="font-size:2.5rem;color:var(--color-gray-400);margin-bottom:1rem;display:block;"></i>
+      <p>Aucun article trouvé dans cette sélection pour le moment.</p>
+      <p style="font-size:0.875rem;margin-top:0.5rem;">Contactez notre équipe sur WhatsApp pour toute demande sur mesure !</p>
+    </div>
+
+    <!-- CTA intermédiaire -->
+    <div style="text-align:center;margin-top:var(--space-xl);padding:var(--space-xl);background:var(--color-gray-50);border-radius:var(--radius-lg);border:1px solid var(--color-gray-200);">
+      <p style="font-family:var(--font-heading);font-size:1.75rem;margin-bottom:var(--space-sm);color:var(--color-text);">Une envie particulière ou un modèle recherché ?</p>
+      <p style="color:var(--color-text-muted);margin-bottom:var(--space-md);font-size:0.95rem;max-width:600px;margin-inline:auto;">Notre catalogue s'enrichit régulièrement avec des arrivages exclusifs. Envoyez-nous simplement la photo de la pièce de vos rêves.</p>
+      <a href="#" class="btn btn-whatsapp btn-lg" data-whatsapp="Bonjour LE MEL HOUSE, je recherche un article particulier...">
+        <i class="fab fa-whatsapp"></i> Contacter notre service VIP
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="header__logo">
+          <img src="assets/img/logo.png" alt="LE MEL HOUSE" class="header__logo-img" />
+          <div class="header__logo-text">LE MEL HOUSE<span>Fashion Boutique</span></div>
+        </a>
+        <p class="footer__desc">Votre boutique mode premium à Cotonou. Vêtements streetwear, montres et accessoires de caractère livrés à votre porte.</p>
+        <div class="footer__socials">
+          <a href="#" class="footer__social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="footer__social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="footer__social-link" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          <a href="#" class="footer__social-link" data-whatsapp="" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div>
+        <p class="footer__col-title">Catégories</p>
+        <ul class="footer__links">
+          <li><a href="boutique.html?cat=vetements">Vêtements</a></li>
+          <li><a href="boutique.html?cat=chaussures">Chaussures</a></li>
+          <li><a href="boutique.html?cat=montres">Montres</a></li>
+          <li><a href="boutique.html?cat=accessoires">Accessoires</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__col-title">Navigation</p>
+        <ul class="footer__links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="categories.html">Catégories</a></li>
+          <li><a href="boutique.html">Boutique</a></li>
+          <li><a href="galerie.html">Galerie</a></li>
+          <li><a href="comment-commander.html">Commander</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__col-title">Commander</p>
+        <div class="footer__whatsapp-block">
+          <p>Commandez directement via WhatsApp en un instant.</p>
+          <a href="#" class="btn btn-whatsapp" data-whatsapp=""><i class="fab fa-whatsapp"></i> +229 01 51 83 32 07</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2024 LE MEL HOUSE. Tous droits réservés.</span>
+      <span>Maison fondée avec passion pour l'élégance <i class="fas fa-heart" style="color:var(--color-primary)"></i></span>
+    </div>
+  </div>
+</footer>
+
+<a href="#" class="fab-whatsapp" data-whatsapp="" aria-label="Commander sur WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<script src="js/whatsapp.js"></script>
+<script src="js/main.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    const cat = params.get('cat');
+    if (cat) {
+      const btn = document.querySelector(`.filter-btn[data-filter="${cat}"]`);
+      if (btn) btn.click();
+    }
+
+    const observer = new MutationObserver(() => {
+      const visible = Array.from(document.querySelectorAll('.product-card')).filter(c => c.style.display !== 'none');
+      document.getElementById('no-results').style.display = visible.length === 0 ? 'block' : 'none';
+    });
+    observer.observe(document.getElementById('products-grid'), { childList: false, attributes: true, subtree: true, attributeFilter: ['style'] });
+  });
+</script>
+</body>
+</html>

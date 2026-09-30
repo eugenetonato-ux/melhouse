@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#140a04"/>
+      <stop offset="50%" stop-color="#0c0d10"/>
+      <stop offset="100%" stop-color="#08080a"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="40%" r="45%">
+      <stop offset="0%" stop-color="#FF6A13" stop-opacity="0.3"/>
+      <stop offset="60%" stop-color="#FF6A13" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F2C94C"/>
+      <stop offset="50%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#AA771C"/>
+    </linearGradient>
+    <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF7A28"/>
+      <stop offset="100%" stop-color="#E85A00"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="1000" fill="url(#bgGrad)"/>
+  <rect width="800" height="1000" fill="url(#glow)"/>
+
+  <!-- Ornate Luxury Borders -->
+  <rect x="36" y="36" width="728" height="928" fill="none" stroke="#D4AF37" stroke-width="1.5" stroke-opacity="0.6"/>
+  <rect x="46" y="46" width="708" height="908" fill="none" stroke="#FF6A13" stroke-width="1" stroke-opacity="0.35"/>
+
+  <!-- Corners -->
+  <path d="M 28 56 L 56 28 M 772 56 L 744 28 M 28 944 L 56 972 M 772 944 L 744 972" stroke="#D4AF37" stroke-width="2"/>
+  <circle cx="56" cy="56" r="3" fill="#D4AF37"/>
+  <circle cx="744" cy="56" r="3" fill="#D4AF37"/>
+  <circle cx="56" cy="944" r="3" fill="#D4AF37"/>
+  <circle cx="744" cy="944" r="3" fill="#D4AF37"/>
+
+  <!-- Top Brand Tag -->
+  <text x="400" y="220" text-anchor="middle" font-family="'Poppins', sans-serif" font-size="13" font-weight="600" fill="#FF7A28" letter-spacing="4">
+    MAISON LE MEL HOUSE
+  </text>
+  <line x1="280" y1="235" x2="520" y2="235" stroke="#FF6A13" stroke-width="1" stroke-opacity="0.4"/>
+
+  <!-- Center Emblem Circle -->
+  <circle cx="400" cy="380" r="90" fill="#140f0c" stroke="#FF6A13" stroke-width="2"/>
+  <circle cx="400" cy="380" r="80" fill="none" stroke="#D4AF37" stroke-width="1" stroke-dasharray="4,4" stroke-opacity="0.6"/>
+
+  <!-- Stylized Sneaker Icon Silhouette inside Circle -->
+  <g transform="translate(340, 335) scale(0.24)">
+    <path d="M432,320 C420,300 390,260 360,240 C330,220 280,210 240,210 C210,210 180,220 150,240 C130,250 110,260 90,280 C60,310 50,340 50,380 C50,420 80,450 120,460 L380,460 C420,460 450,430 450,390 C450,360 440,335 432,320 Z M380,440 L120,440 C95,440 75,415 75,385 C75,355 85,330 110,305 C130,285 150,270 170,260 C195,245 220,235 245,235 C275,235 315,245 340,260 C365,275 390,310 405,330 C418,350 425,370 425,390 C425,415 405,440 380,440 Z" fill="url(#goldGrad)"/>
+    <path d="M120,400 L380,400" stroke="#FF6A13" stroke-width="12" stroke-linecap="round"/>
+  </g>
+
+  <!-- Titles -->
+  <text x="400" y="530" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-size="44" font-weight="600" fill="#FFFFFF" letter-spacing="2">
+    CHAUSSURES
+  </text>
+  <text x="400" y="585" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-size="44" font-weight="600" fill="url(#goldGrad)" letter-spacing="2">
+    &amp; SNEAKERS
+  </text>
+
+  <!-- Subtitle -->
+  <text x="400" y="650" text-anchor="middle" font-family="'Poppins', sans-serif" font-size="14" fill="#BBBBBB" letter-spacing="1">
+    Sneakers Rares · Baskets Streetwear · Modèles Habillés
+  </text>
+  <text x="400" y="680" text-anchor="middle" font-family="'Poppins', sans-serif" font-size="13" fill="#888888">
+    Sélection privée sur commande personnalisée
+  </text>
+
+  <!-- VIP Badge Button -->
+  <rect x="250" y="730" width="300" height="52" rx="26" fill="url(#orangeGrad)"/>
+  <text x="400" y="762" text-anchor="middle" font-family="'Poppins', sans-serif" font-size="12" font-weight="700" fill="#FFFFFF" letter-spacing="1.5">
+    DISPONIBLE SUR WHATSAPP VIP
+  </text>
+
+  <!-- Bottom Details -->
+  <text x="400" y="850" text-anchor="middle" font-family="'Poppins', sans-serif" font-size="11" fill="#777777" letter-spacing="2">
+    POINTURES &amp; MODÈLES SUR DEMANDE
+  </text>
+</svg>

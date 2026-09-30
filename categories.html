@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catégories — LE MEL HOUSE | Collections Mode Premium</title>
+  <meta name="description" content="Parcourez toutes les catégories de LE MEL HOUSE : Vêtements streetwear, Chaussures & Sneakers, Montres de prestige et Accessoires raffinés. Commandez directement via WhatsApp." />
+  <link rel="icon" type="image/png" href="assets/img/logo.png" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .subcategories-section { padding-block: var(--space-2xl); }
+    .subcategories-section:nth-child(even) { background: var(--color-gray-50); }
+    .subcategory-layout {
+      display: grid;
+      gap: var(--space-xl);
+      align-items: center;
+    }
+    @media(min-width:768px) {
+      .subcategory-layout { grid-template-columns: 1fr 1fr; }
+      .subcategory-layout.reverse .subcategory-img { order: 2; }
+      .subcategory-layout.reverse .subcategory-info { order: 1; }
+    }
+    .subcategory-img {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      box-shadow: var(--shadow-md);
+      background: var(--color-black);
+    }
+    .subcategory-img img { width:100%;height:100%;object-fit:cover;transition:transform 0.6s ease; }
+    .subcategory-img:hover img { transform:scale(1.04); }
+    .subcategory-info { display:flex;flex-direction:column;gap:var(--space-md); }
+    .subcategory-info h2 { margin-bottom:0; font-size:clamp(2rem, 3.5vw, 2.75rem); }
+    .subcategory-tags { display:flex;flex-wrap:wrap;gap:0.5rem; }
+    .tag {
+      padding: 0.35rem 1rem;
+      border-radius: var(--radius-full);
+      background: var(--color-primary-light);
+      color: var(--color-primary-dark);
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    .cat-icon {
+      display:inline-flex;align-items:center;justify-content:center;
+      width:56px;height:56px;border-radius:var(--radius-md);
+      background:var(--color-primary-light);
+      color:var(--color-primary);
+      font-size:1.5rem;
+      margin-bottom:var(--space-xs);
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header" id="header">
+  <div class="container header__inner">
+    <a href="index.html" class="header__logo">
+      <img src="assets/img/logo.png" alt="LE MEL HOUSE Logo" class="header__logo-img" />
+      <div class="header__logo-text">LE MEL HOUSE<span>Fashion Boutique</span></div>
+    </a>
+    <nav class="header__nav" aria-label="Navigation principale">
+      <a href="index.html">Accueil</a>
+      <a href="categories.html" class="active">Catégories</a>
+      <a href="boutique.html">Boutique</a>
+      <a href="galerie.html">Galerie</a>
+      <a href="comment-commander.html">Commander</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header__actions">
+      <a href="#" class="btn btn-whatsapp btn-sm" data-whatsapp="">
+        <i class="fab fa-whatsapp"></i> Commander
+      </a>
+    </div>
+    <button class="header__hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<nav class="mobile-nav" id="mobile-nav">
+  <button class="mobile-nav__close" id="mobile-nav-close"><i class="fas fa-times"></i></button>
+  <a href="index.html">Accueil</a>
+  <a href="categories.html">Catégories</a>
+  <a href="boutique.html">Boutique</a>
+  <a href="galerie.html">Galerie</a>
+  <a href="comment-commander.html">Commander</a>
+  <a href="contact.html">Contact</a>
+  <div class="mobile-nav__cta">
+    <a href="#" class="btn btn-whatsapp" data-whatsapp=""><i class="fab fa-whatsapp"></i> Commander</a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+      <a href="index.html">Accueil</a>
+      <i class="fas fa-chevron-right"></i>
+      <span>Catégories</span>
+    </nav>
+    <h1>Nos Collections</h1>
+    <p>De la tête aux pieds, tout ce qu'il faut pour composer un look complet, raffiné et mémorable.</p>
+  </div>
+</section>
+
+<!-- ═══ VÊTEMENTS ═══ -->
+<section class="subcategories-section" id="vetements">
+  <div class="container">
+    <div class="subcategory-layout reveal-left">
+      <div class="subcategory-img">
+        <img src="assets/img/cat-vetements.jpg" alt="Collection Vêtements LE MEL HOUSE" loading="lazy" />
+      </div>
+      <div class="subcategory-info">
+        <div class="cat-icon"><i class="fas fa-tshirt"></i></div>
+        <h2>Vêtements &amp; Streetwear</h2>
+        <p class="text-muted">Exprimez votre singularité avec notre vestiaire urbain et contemporain. T-shirts oversize aux coupes impeccables, maillots floqués sur mesure, jeans sculptés et joggers ultra-confortables conçus pour marquer les esprits.</p>
+        <div class="subcategory-tags">
+          <span class="tag">T-shirts Oversize</span>
+          <span class="tag">Maillots Flocage Sur Mesure</span>
+          <span class="tag">Jeans &amp; Shorts Baggy</span>
+          <span class="tag">Joggers Confort</span>
+        </div>
+        <a href="boutique.html?cat=vetements" class="btn btn-primary" style="align-self:flex-start">
+          <i class="fas fa-shopping-bag"></i> Découvrir les vêtements
+        </a>
+        <div class="category-inquiry-box">
+          <div class="category-inquiry-box__icon"><i class="fab fa-whatsapp"></i></div>
+          <p class="category-inquiry-box__text">
+            Si vous voulez d'autres produits ou des modèles similaires de cette catégorie, vous pouvez demander plus de détails <a href="https://wa.me/2290151833207?text=Bonjour%20LE%20MEL%20HOUSE%2C%20je%20recherche%20d%27autres%20v%C3%AAtements%20ou%20des%20mod%C3%A8les%20similaires%20%C3%A0%20votre%20collection%20(tailles%2C%20coupes%2C%20nouveaux%20arrivages).%20Pourriez-vous%20me%20donner%20plus%20de%20d%C3%A9tails%20%3F" class="category-inquiry-box__link" data-whatsapp-category="vetements" target="_blank" rel="noopener noreferrer">ici</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CHAUSSURES ═══ -->
+<section class="subcategories-section" id="chaussures">
+  <div class="container">
+    <div class="subcategory-layout reverse reveal-right">
+      <div class="subcategory-img">
+        <img src="assets/img/cat-chaussures.jpg" alt="Collection Chaussures &amp; Sneakers LE MEL HOUSE" loading="lazy" />
+      </div>
+      <div class="subcategory-info">
+        <div class="cat-icon"><i class="fas fa-shoe-prints"></i></div>
+        <h2>Chaussures &amp; Sneakers</h2>
+        <p class="text-muted">Chaque pas affirme votre démarche. Sneakers de collection, baskets streetwear d'exception et paires habillées : accédez à une sélection privée à votre pointure exacte via notre conciergerie WhatsApp.</p>
+        <div class="subcategory-tags">
+          <span class="tag">Sneakers Rares</span>
+          <span class="tag">Baskets Tendance</span>
+          <span class="tag">Sabots &amp; Crocs</span>
+          <span class="tag">Service Pointure VIP</span>
+        </div>
+        <a href="boutique.html?cat=chaussures" class="btn btn-primary" style="align-self:flex-start">
+          <i class="fas fa-shopping-bag"></i> Explorer la sélection
+        </a>
+        <div class="category-inquiry-box">
+          <div class="category-inquiry-box__icon"><i class="fab fa-whatsapp"></i></div>
+          <p class="category-inquiry-box__text">
+            Si vous voulez d'autres produits ou des modèles similaires de cette catégorie, vous pouvez demander plus de détails <a href="https://wa.me/2290151833207?text=Bonjour%20LE%20MEL%20HOUSE%2C%20je%20recherche%20d%27autres%20chaussures%20ou%20des%20mod%C3%A8les%20similaires%20de%20sneakers%20(pointures%2C%20mod%C3%A8les%20particuliers).%20Pourriez-vous%20me%20donner%20plus%20de%20d%C3%A9tails%20%3F" class="category-inquiry-box__link" data-whatsapp-category="chaussures" target="_blank" rel="noopener noreferrer">ici</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MONTRES ═══ -->
+<section class="subcategories-section" id="montres">
+  <div class="container">
+    <div class="subcategory-layout reveal-left">
+      <div class="subcategory-img">
+        <img src="assets/img/cat-montres.jpg" alt="Collection Montres LE MEL HOUSE" loading="lazy" />
+      </div>
+      <div class="subcategory-info">
+        <div class="cat-icon"><i class="fas fa-clock"></i></div>
+        <h2>Montres de Caractère</h2>
+        <p class="text-muted">Une montre ne donne pas seulement l'heure — elle incarne votre réussite et votre prestance. Du chronographe tout acier accompagné de sa gourmette aux éditions sport et silicone aux coloris vibrants, choisissez l'accessoire maître de votre poignet.</p>
+        <div class="subcategory-tags">
+          <span class="tag">Quartz Acier Inoxydable</span>
+          <span class="tag">Chronographes Sport</span>
+          <span class="tag">Montres Silicone Monochromes</span>
+          <span class="tag">Coffrets Cadeau</span>
+        </div>
+        <a href="boutique.html?cat=montres" class="btn btn-primary" style="align-self:flex-start">
+          <i class="fas fa-shopping-bag"></i> Découvrir les montres
+        </a>
+        <div class="category-inquiry-box">
+          <div class="category-inquiry-box__icon"><i class="fab fa-whatsapp"></i></div>
+          <p class="category-inquiry-box__text">
+            Si vous voulez d'autres produits ou des modèles similaires de cette catégorie, vous pouvez demander plus de détails <a href="https://wa.me/2290151833207?text=Bonjour%20LE%20MEL%20HOUSE%2C%20je%20recherche%20d%27autres%20montres%20ou%20des%20mod%C3%A8les%20similaires%20dans%20votre%20s%C3%A9lection%20horlog%C3%A8re%20(finitions%2C%20coloris%2C%20coffrets).%20Pourriez-vous%20me%20donner%20plus%20de%20d%C3%A9tails%20%3F" class="category-inquiry-box__link" data-whatsapp-category="montres" target="_blank" rel="noopener noreferrer">ici</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ACCESSOIRES ═══ -->
+<section class="subcategories-section" id="accessoires">
+  <div class="container">
+    <div class="subcategory-layout reverse reveal-right">
+      <div class="subcategory-img">
+        <img src="assets/img/cat-accessoires.jpg" alt="Collection Accessoires LE MEL HOUSE" loading="lazy" />
+      </div>
+      <div class="subcategory-info">
+        <div class="cat-icon"><i class="fas fa-gem"></i></div>
+        <h2>Bijoux &amp; Accessoires</h2>
+        <p class="text-muted">L'art du détail qui sublime chaque silhouette. Chaînes mailles argentées, gourmettes massives, bagues et parures complètes, sans oublier les coffrets intégrals Apple Watch pour allier modernité et prestige.</p>
+        <div class="subcategory-tags">
+          <span class="tag">Colliers &amp; Chaînes</span>
+          <span class="tag">Bagues &amp; Chevalières</span>
+          <span class="tag">Sacs &amp; Sacs à Dos</span>
+          <span class="tag">Kits Complets Apple Watch</span>
+        </div>
+        <a href="boutique.html?cat=accessoires" class="btn btn-primary" style="align-self:flex-start">
+          <i class="fas fa-shopping-bag"></i> Voir les accessoires
+        </a>
+        <div class="category-inquiry-box">
+          <div class="category-inquiry-box__icon"><i class="fab fa-whatsapp"></i></div>
+          <p class="category-inquiry-box__text">
+            Si vous voulez d'autres produits ou des modèles similaires de cette catégorie, vous pouvez demander plus de détails <a href="https://wa.me/2290151833207?text=Bonjour%20LE%20MEL%20HOUSE%2C%20je%20recherche%20d%27autres%20accessoires%20ou%20des%20pi%C3%A8ces%20similaires%20(bijoux%2C%20sacs%2C%20coffrets%20connect%C3%A9s).%20Pourriez-vous%20me%20donner%20plus%20de%20d%C3%A9tails%20%3F" class="category-inquiry-box__link" data-whatsapp-category="accessoires" target="_blank" rel="noopener noreferrer">ici</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-banner">
+  <div class="container">
+    <h2>Une pièce attire votre attention ?</h2>
+    <p>Contactez notre service WhatsApp dès maintenant pour vérifier la disponibilité de votre taille et organiser votre livraison.</p>
+    <a href="#" class="btn btn-ghost btn-lg" data-whatsapp="">
+      <i class="fab fa-whatsapp"></i> Échanger avec un conseiller
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="header__logo">
+          <img src="assets/img/logo.png" alt="LE MEL HOUSE" class="header__logo-img" />
+          <div class="header__logo-text">LE MEL HOUSE<span>Fashion Boutique</span></div>
+        </a>
+        <p class="footer__desc">Votre boutique mode premium à Cotonou. Vêtements streetwear, montres et accessoires de caractère livrés à votre porte.</p>
+        <div class="footer__socials">
+          <a href="#" class="footer__social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="footer__social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="footer__social-link" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          <a href="#" class="footer__social-link" data-whatsapp="" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div>
+        <p class="footer__col-title">Catégories</p>
+        <ul class="footer__links">
+          <li><a href="boutique.html?cat=vetements">Vêtements</a></li>
+          <li><a href="boutique.html?cat=chaussures">Chaussures</a></li>
+          <li><a href="boutique.html?cat=montres">Montres</a></li>
+          <li><a href="boutique.html?cat=accessoires">Accessoires</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__col-title">Navigation</p>
+        <ul class="footer__links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="categories.html">Catégories</a></li>
+          <li><a href="boutique.html">Boutique</a></li>
+          <li><a href="galerie.html">Galerie</a></li>
+          <li><a href="comment-commander.html">Commander</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__col-title">Commander</p>
+        <div class="footer__whatsapp-block">
+          <p>Commandez directement via WhatsApp. Notre équipe vous répond immédiatement.</p>
+          <a href="#" class="btn btn-whatsapp" data-whatsapp=""><i class="fab fa-whatsapp"></i> +229 01 51 83 32 07</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2024 LE MEL HOUSE. Tous droits réservés.</span>
+      <span>Maison fondée avec passion pour l'élégance <i class="fas fa-heart" style="color:var(--color-primary)"></i></span>
+    </div>
+  </div>
+</footer>
+
+<a href="#" class="fab-whatsapp" data-whatsapp="" aria-label="Commander sur WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<script src="js/whatsapp.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
